@@ -50,7 +50,7 @@
             <dd><a href="/index/frequency">Выбор частоты 2.4 или 868/915</a></dd>
           </dl>
           <dl data-tag="hardware">
-            <dd><a href="/hardware">Железо</a></dt>
+            <dt><a href="/hardware">Железо</a></dt>
             <dd><a href="/hardware/transmitters">Передатчики</a></dd>
             <dd><a href="/hardware/txmodules">Модули</a></dd>
             <dd><a href="/hardware/receivers">Приемники</a></dd>
@@ -66,7 +66,9 @@
         <script>
           const path = document.location.pathname.split('/')[1];
           const dls = document.getElementById('nav').getElementsByTagName('dl');
-
+          for (let dl of dls) {
+            dl.classList.toggle('visible', path == dl.data.tag);
+          }
           console.log(path, dls);
         </script>
 
