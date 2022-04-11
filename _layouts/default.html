@@ -69,7 +69,7 @@
           const path = document.location.pathname.split('/')[1];
           const dls = document.getElementById('nav').getElementsByTagName('dl');
           for (let dl of dls) {
-            dl.classList.toggle('visible', path == dl.dataset.tag);
+            dl.classList.toggle('visible', (path == dl.dataset.tag) || (path === '' && dl.dataset.tag === 'index'));
           }
           console.log(path, dls);
         </script>
