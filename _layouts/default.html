@@ -60,7 +60,7 @@
           <dl data-tag="software">
             <dt><a href="/software">Прошивка ELRS</a></dt>
             <dd><a href="/software/configurator">Конфигуратор</a></dd>
-            <dd><a href="/software/usbuart">Прошивка с помощью USB-UART</a></dd>
+            <dd><a href="/software/usb2uart">Прошивка с помощью USB-UART</a></dd>
             <dd><a href="/software/building">Сборка кастомной прошивки</a></dd>
           </dl>
         </nav>
@@ -71,7 +71,6 @@
           for (let dl of dls) {
             dl.classList.toggle('visible', (path == dl.dataset.tag) || (path === '' && dl.dataset.tag === 'index'));
           }
-          console.log(path, dls);
         </script>
 
         {% if site.github.is_project_page %}
