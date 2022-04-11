@@ -11,6 +11,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
     {% include head-custom.html %}
+    <style>
+      #nav {
+        font-size: 14px;
+        
+        
+      }
+      #nav dl dt {
+        color: #9fc76f;
+        font-weight: 500;
+      }
+      #nav dl dd {
+        color: rgb(73, 107, 184);
+        font-weight: 500;
+        display: none;
+      }
+      #nav dl.visible dd {
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -23,14 +42,35 @@
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
         
-        <p>
-        <ul class="menu">
-          <li><a href="/">Главная</a></li>
-          <li><a href="/hardware">Железо</a></li>
-          <li><a href="/software">Прошивки</a></li>
-          <li><a href="/other">Прочее</a></li>
-        </ul>
-        </p>
+        <nav id="nav">
+          <dl data-tag="index">
+            <dt><a href="/">Главная</a></dt>
+            <dd><a href="/index/difference">Сравниение с другими системами</a></dd>
+            <dd><a href="/index/modulation">Специфика LORA-модуляции</a></dd>
+            <dd><a href="/index/frequency">Выбор частоты 2.4 или 868/915</a></dd>
+          </dl>
+          <dl data-tag="hardware">
+            <dd><a href="/hardware">Железо</a></dt>
+            <dd><a href="/hardware/transmitters">Передатчики</a></dd>
+            <dd><a href="/hardware/txmodules">Модули</a></dd>
+            <dd><a href="/hardware/receivers">Приемники</a></dd>
+          </dl>
+          <dl data-tag="software">
+            <dt><a href="/software">Прошивка ELRS</a></dt>
+            <dd><a href="/software/configurator">Конфигуратор</a></dd>
+            <dd><a href="/software/usbuart">Прошивка с помощью USB-UART</a></dd>
+            <dd><a href="/software/building">Сборка кастомной прошивки</a></dd>
+          </dl>
+        </nav>
+        
+        <script>
+          const path = document.location.pathname.split('/')[1];
+          const dls = document.getElementById('nav').getElementsByTagName('dl');
+          dls.forEach(dl => {
+            console.log(dl);
+          });
+          console.log(path, dls);
+        </script>
 
         {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
