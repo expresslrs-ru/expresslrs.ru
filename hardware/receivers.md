@@ -23,9 +23,9 @@
 
 |  OK   | Название         | Антенна | Телеметрия | Прочее |
 |-----|------------------|----------|------------|----------|
-| ✅ |  [ELRS-R24-D](http://www.mateksys.com/?portfolio=elrs-r24#tab-id-1)      | Диполь - 2шт.       | PA+LNA 22.5dbm | псевдодиверсити  |
-| ✅ |  [ELRS-R24-S](http://www.mateksys.com/?portfolio=elrs-r24#tab-id-2)       | SMD (керамическая)  | PA+LNA 20dbm | - |
-| ✅ |  [ELRS-R24-P](http://www.mateksys.com/?portfolio=elrs-r24-p)       | Диполь  | 12dbm | 6 ШИМ(PWM) выходов, 1 вход для датчика напряжения без делителя (макс 3v3, пока не поддерживается), может работать как обычный CRSF приемник |
+| ✅ |  [ELRS‑R24‑D](http://www.mateksys.com/?portfolio=elrs-r24#tab-id-1)      | Диполь - 2шт.       | PA+LNA 22.5dbm | псевдодиверсити  |
+| ✅ |  [ELRS‑R24‑S](http://www.mateksys.com/?portfolio=elrs-r24#tab-id-2)       | SMD (керамическая)  | PA+LNA 20dbm | - |
+| ✅ |  [ELRS‑R24‑P](http://www.mateksys.com/?portfolio=elrs-r24-p)       | Диполь  | 12dbm | 6 ШИМ(PWM) выходов, 1 вход для датчика напряжения без делителя (макс 3v3, пока не поддерживается), может работать как обычный CRSF приемник |
 
 ### HappyModel
 
