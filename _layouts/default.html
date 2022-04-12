@@ -69,9 +69,22 @@
         <script>
           const path = document.location.pathname.split('/')[1];
           const dls = document.getElementById('nav').getElementsByTagName('dl');
-          for (let dl of dls) {
-            dl.classList.toggle('visible', (path == dl.dataset.tag) || (path === '' && dl.dataset.tag === 'index'));
+          const visible = function(tag) {
+            for (let dl of dls) {
+              dl.classList.toggle('visible', tag == dl.dataset.tag);
+            }
           }
+          visible(path || 'index');
+          for (let dl of dls) {
+            dl.onmouseenter = (e) => {
+              console.log(e);
+              visible(e.target.dataset.tag);
+            }
+            dl.onmouseleave = (e) => {
+              visible(path || 'index');
+            }
+          }
+
         </script>
         <!--
         {% if site.github.is_project_page %}
