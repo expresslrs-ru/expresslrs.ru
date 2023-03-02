@@ -1,4 +1,6 @@
-site_name: ExpressLRS RU
+site_name: ExpressLRS.RU
+repo_url: https://github.com/ExpressLRS/ExpressLRS/releases/
+repo_name: ExpressLRS
 theme:
   name: material
   features:
@@ -15,16 +17,21 @@ theme:
   - content.code.annotation
   - content.code.copy
   language: ru
+  logo: assets/images/logotype.svg
+  favicon: favicon.ico
+  
   palette:
-  - scheme: default
+  - media: "(prefers-color-scheme: dark)"
+    scheme: default
     toggle:
-      icon: material/toggle-switch-off-outline
+      icon: material/weather-night
       name: Switch to dark mode
     primary: teal
     accent: blue
-  - scheme: slate
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
     toggle:
-      icon: material/toggle-switch
+      icon: material/weather-sunny
       name: Switch to light mode
     primary: teal
     accent: lime   
