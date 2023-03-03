@@ -42,3 +42,12 @@ markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
+
+#Добавлять новые пункты через тут, названия заданные тут видны на сайте, названия файлов - структура ссылки#
+nav:
+ - Инструкции: 
+    - Прошивка:
+      - Передатчики:
+        - Внешние передатчики: Manuals/Firmware/Transmitters/ExternalTX/Flashing-external-tx.md
+        - Внутренние передатчики: Manuals/Firmware/Transmitters/InternalTX/index.md
+    - Параметры сборки: Manuals/FlashingOptions.md

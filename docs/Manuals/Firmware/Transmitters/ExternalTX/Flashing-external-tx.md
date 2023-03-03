@@ -28,7 +28,7 @@
 
 ### Метод через браузер
 
-Выбрав правильный таргет и [Параметры сборки](/Quick Start/Параметры сборки), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
+Выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
 
 <figure markdown>
 ![Build]
@@ -69,7 +69,7 @@
 
 ### Метод через домашнюю сеть и браузер
 
-Выбрав правильный таргет и [Параметры сборки](/Quick Start/Параметры сборки), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
+Выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
 
 <figure markdown>
 ![Build]
@@ -110,7 +110,7 @@
 !!! note "Примечание"
     Иногда роутеры не присваивают устройствам dns имя (http://elrs_tx.local), если этот сайт не доступен вам придется сходить в амдинку вашего роутера и посмотреть какой ip получило устройство ExpressLRS, и вбить его вместо порта внизу ExpressLRS Configurator.
 
-В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](/Quick Start/Параметры сборки), нажмите `Build and Flash` и прошейте передатчик. При успешной прошивке вы увидите результат как на картинке ниже:
+В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), нажмите `Build and Flash` и прошейте передатчик. При успешной прошивке вы увидите результат как на картинке ниже:
 
 <figure markdown>
 ![Build & Flash]
@@ -163,22 +163,27 @@
     <figcaption>ES24TX Pro 1W</figcaption>
     </figure>
 
-Attach your USB cable to the module and your computer. [CP210x Drivers](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) will have to be installed for this to work properly (Windows). Make sure your computer recognizes the module as a CP210x USB-to-UART Bridge device (check Device Manager; or the Actions section of the ExpressLRS Configurator should show another Com Port with Silabs CP210x designation), otherwise, this method will not work.
+     <figure markdown>
+    <img class="center-img" src="https://user-images.githubusercontent.com/1081265/208266962-2e00a222-d44f-48b8-8ea0-e4a9a8433e64.png">
+    <figcaption>BetaFpv</figcaption>
+    </figure>
 
-!!! tip "Important"
-    Check Device Manager on your Windows system before proceeding. Ensure the correct drivers are installed. Some Linux distros might also need drivers. The drivers can be downloaded [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers).
+
+Воткните USB в передатчик. Убедитесь что у вас есть [драйвера на CP210x](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) для Windows (Для Mac/Linux не нужно). Проверьте в диспетчере устройств что у устройства нет восклицательного знака и драйвера встали. Устройство должно называться CP210x и иметь номер COM-порта.
+
 
 <figure markdown>
 ![CP210x Drivers](/assets/images/CP210xDriverDownload.png)
 </figure>
 
-Using the ExpressLRS Configurator with the correct Target selected and [Firmware Options] set, hit **Build & Flash**. Wait for the process to finish, and you should be greeted with the "Success" message.
+В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), нажмите `Build and Flash` и прошейте передатчик. Дождитесь окончания, при успешной прошивке будет надпись "Success"
+
 
 <figure markdown>
 ![Build & Flash]
 </figure>
 
-Assemble the module back together (ensure the module PCB is not loose from its mounting points) and attach it to your radio module bay and verify the version and hash in the main screen of the ExpressLRS Lua script.
+Соберите модуль обратно, если вы его разбирали, вставьте в аппу запускайте LUA Script и проверяйте работоспособность, джамперы можно оставить так если вы не пользуетесь ELRS Backpack или даже не знаете что это такое.
 
 [ExpressLRS Lua script]: https://github.com/ExpressLRS/ExpressLRS/blob/3.x.x-maintenance/src/lua/elrsV3.lua?raw=true
 [Build]: /assets/images/Build.png
