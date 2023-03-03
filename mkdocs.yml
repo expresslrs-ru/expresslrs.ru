@@ -4,6 +4,7 @@ repo_name: ExpressLRS
 theme:
   name: material
   features:
+  - navigation.footer
   - navigation.sections
   - navigation.tabs
   - navigation.tabs.sticky
@@ -45,9 +46,18 @@ markdown_extensions:
 
 #Добавлять новые пункты через тут, названия заданные тут видны на сайте, названия файлов - структура ссылки#
 nav:
+ - Главная: index.md
  - Инструкции: 
+    - Настройка аппаратуры: Manuals/Firmware/Transmitters/tx-prep.md
+    - Параметры сборки: Manuals/FlashingOptions.md
     - Прошивка:
       - Передатчики:
-        - Внешние передатчики: Manuals/Firmware/Transmitters/ExternalTX/Flashing-external-tx.md
-        - Внутренние передатчики: Manuals/Firmware/Transmitters/InternalTX/index.md
-    - Параметры сборки: Manuals/FlashingOptions.md
+        - Внешние передатчики: Manuals/Firmware/Transmitters/Flashing-external-tx.md
+        - Внутренние передатчики: Manuals/Firmware/Transmitters/Flashing-internal-tx.md
+      - Приемники:
+        - Обычные приемники: Manuals/Firmware/Recievers/external-reciever.md
+        - SPI приемники: Manuals/Firmware/Recievers/spi-reciever.md
+ - Железо: 
+   - Приемники: hardware/receivers.md
+   - Конвертеры: hardware/converters.md
+ - Инфо: Info/index.md
