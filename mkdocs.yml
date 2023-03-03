@@ -36,6 +36,7 @@ theme:
     primary: teal
     accent: lime   
 markdown_extensions:
+  - pymdownx.details
   - toc:
       permalink: true
   - admonition
