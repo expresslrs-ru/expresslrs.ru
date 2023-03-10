@@ -1,4 +1,5 @@
 site_name: ExpressLRS.RU
+site_url: https://expresslrs.ru/
 repo_url: https://github.com/ExpressLRS/ExpressLRS/releases/
 repo_name: ExpressLRS
 theme:
@@ -44,6 +45,8 @@ markdown_extensions:
   - attr_list
   - md_in_html
 
+plugins:
+ - social 
 #Добавлять новые пункты через тут, названия заданные тут видны на сайте, названия файлов - структура ссылки#
 nav:
  - Главная: index.md
