@@ -60,6 +60,9 @@ nav:
       - Приемники:
         - Обычные приемники: Manuals/Firmware/Recievers/external-reciever.md
         - SPI приемники: Manuals/Firmware/Recievers/spi-reciever.md
+    - Проблемы:
+      - Оживление приемников: Manuals/Problems/Unbrick.md
+      - Jumper T-Pro: Manuals/Problems/Jumper T-Pro.md
  - Железо: 
    - Приемники: hardware/receivers.md
    - Конвертеры: hardware/converters.md
