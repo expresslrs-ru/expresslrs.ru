@@ -30,7 +30,7 @@ description: Инструкция по прошивке внешних ELRS пе
 
 ### Метод через браузер
 
-Выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
+Выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
 
 <figure markdown>
 ![Build]
@@ -60,6 +60,11 @@ description: Инструкция по прошивке внешних ELRS пе
 </figure>
 
 Выберите пункт `Wifi Connectivity` в скрипте, а потом нажмите `Enable Wifi`. Нажмите ОК еще раз, чтобы включить WiFI на передатчике. Подключитесь к сети `ExpressLRS TX` с паролем `expresslrs`.
+
+<figure markdown>
+![Lua3](/../assets/images/lua/wifi-bw.png)
+</figure>
+
 <figure markdown>
 ![WiFi Hotspot](/assets/images/WifiHotspotTX.png)
 </figure>
@@ -68,6 +73,14 @@ description: Инструкция по прошивке внешних ELRS пе
 
 После того как файл загрузится появится зеленое окно подтверждения что все хорошо, либо ошибка. Если ругается на таргет, убедитесь что он верный и нажмите `Flash Anyway`
 Проверьте что версия внизу скрипта или на WiFi странице поменялась на ту что вы прошивали.
+
+<figure markdown>
+![Firmware Update](/../assets/images/web-firmwareupdate.png)
+</figure>
+
+<figure markdown>
+![Update Success](/../assets/images/web-firmwareupdateSuccess.png)
+</figure>
 
 ### Метод через домашнюю сеть и браузер
 
@@ -81,6 +94,10 @@ description: Инструкция по прошивке внешних ELRS пе
 Не закрывайте это окно, а сохраните этот файл в удобное место для последующей загрузки, например скиньте в сохраненки Telegram.
 
 Используя [Lua скрипт ELRS](https://github.com/ExpressLRS/ExpressLRS/blob/3.x.x-maintenance/src/lua/elrsV3.lua?raw=true) (правой кнопкой, сохранить как *.lua). Выберите `Wifi Connectivity` и включите WiFi кнопкой `Enable WiFi`. Если во время предыдущей прошивки вы прописали SSID своего домашнего WiFi или добавили его подключившись по `10.0.0.1`, то теперь модуль подключается к вашему роутеру, вместо раздачи точки.
+
+<figure markdown>
+![Lua3](/../assets/images/lua/wifi-bw.png)
+</figure>
 
 !!! danger "Внимание"
     После того как вы подключите свой TX/RX модуль к домашней WiFi сети он всегда будет подключаться к вашему роутеру. Он не будет создавать привычную WiFi точку, пока видит ваш домашний WiFi. Если вы не можете найти устройство в локальной сети, выключите роутер и подключитесь первым методом, далее уберите домашнюю WiFi сеть.
@@ -99,9 +116,17 @@ description: Инструкция по прошивке внешних ELRS пе
 После того как файл загрузится появится зеленое окно подтверждения что все хорошо, либо ошибка. Если ругается на таргет, убедитесь что он верный и нажмите `Flash Anyway`
 Проверьте что версия внизу скрипта или на WiFi странице поменялась на ту что вы прошивали.
 
+<figure markdown>
+![Update Success](/../assets/images/web-firmwareupdateSuccess.png)
+</figure>
+
 ### Метод через домашнюю сеть и конфигуратор
 
 Используя [Lua скрипт ELRS](https://github.com/ExpressLRS/ExpressLRS/blob/3.x.x-maintenance/src/lua/elrsV3.lua?raw=true) (правой кнопкой, сохранить как *.lua). Выберите `Wifi Connectivity` и включите WiFi кнопкой `Enable WiFi`. Если во время предыдущей прошивки вы прописали SSID своего домашнего WiFi или добавили его подключившись по `10.0.0.1`, то теперь модуль подключается к вашему роутеру, вместо раздачи точки.
+
+<figure markdown>
+![Lua3](/assets/images/lua/wifi-bw.png)
+</figure>
 
 Теперь ваше устройство будет видно внизу ExpressLRS Configurator, если выбран метод прошивки WiFi
 <figure markdown>
