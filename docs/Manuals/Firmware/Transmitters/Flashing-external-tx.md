@@ -1,4 +1,9 @@
 
+<head>
+ <meta  property="og:type"  content="website" >
+ <meta  property="og:title"  content="Прошивка внешних передатчиков ELRS" >
+ <meta  property="og:url"  content="https://expresslrs.ru/Manuals/Firmware/Transmitters/Flashing-external-tx/" >
+</head>
 !!! note "Примечание"
     Эта инструкция подходит для всех внешних ELRS передатчиков на 2.4Ghz/900Mhz, которые устанавливаются во внешний слот аппаратуры.
 
