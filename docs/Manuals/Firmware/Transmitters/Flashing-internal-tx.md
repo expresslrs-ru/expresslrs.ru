@@ -118,7 +118,7 @@ description: Инструкция по прошивке встроенных ELR
 
 ### Метод через домашнюю сеть и браузер
 
-Выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
+Выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
 
 <figure markdown>
 ![Build]
@@ -177,7 +177,7 @@ Using the ExpressLRS Configurator, select the correct Target and set your [Firmw
 !!! note "Примечание"
     Иногда роутеры не присваивают устройствам dns имя (http://elrs_tx.local), если этот сайт не доступен вам придется сходить в амдинку вашего роутера и посмотреть какой ip получило устройство ExpressLRS, и вбить его вместо порта внизу ExpressLRS Configurator.
 
-В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), нажмите `Build and Flash` и прошейте передатчик. При успешной прошивке вы увидите результат как на картинке ниже:
+В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions.md), нажмите `Build and Flash` и прошейте передатчик. При успешной прошивке вы увидите результат как на картинке ниже:
 
 <figure markdown>
 ![Build & Flash]

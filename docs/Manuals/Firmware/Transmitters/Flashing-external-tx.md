@@ -4,7 +4,7 @@ description: Инструкция по прошивке внешних ELRS пе
 !!! note "Примечание"
     Эта инструкция подходит для всех внешних ELRS передатчиков на 2.4Ghz/900Mhz, которые устанавливаются во внешний слот аппаратуры.
 
-!!! danger "Внимание"
+!!! danger "Ошибка Bad Size Given"
     Если вы впервые обновляете свой **передатчик** через WiFi с 2.х/1.x прошивки, на 3.x прошивку, для начала вам нужно прошить его на версию 2.5.2, после этого прошить специальную [Repartitioner](https://github.com/ExpressLRS/repartitioner) прошивку [скачать тут](https://github.com/ExpressLRS/repartitioner/releases/download/1.0/repartitioner.bin) (нажать правой кнопкой, сохранить как). Оно будет ругаться на Target Mismatch (не совпадение таргетов), просто жмите `Flash Anyway`. 
     Только после этого можно закидывать 3.х прошивку по WiFi, точка поднимется сама, в Lua заходить не надо. 
     
@@ -84,7 +84,7 @@ description: Инструкция по прошивке внешних ELRS пе
 
 ### Метод через домашнюю сеть и браузер
 
-Выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
+Выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
 
 <figure markdown>
 ![Build]
@@ -137,7 +137,7 @@ description: Инструкция по прошивке внешних ELRS пе
 !!! note "Примечание"
     Иногда роутеры не присваивают устройствам dns имя (http://elrs_tx.local), если этот сайт не доступен вам придется сходить в амдинку вашего роутера и посмотреть какой ip получило устройство ExpressLRS, и вбить его вместо порта внизу ExpressLRS Configurator.
 
-В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), нажмите `Build and Flash` и прошейте передатчик. При успешной прошивке вы увидите результат как на картинке ниже:
+В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions), нажмите `Build and Flash` и прошейте передатчик. При успешной прошивке вы увидите результат как на картинке ниже:
 
 <figure markdown>
 ![Build & Flash]
@@ -203,7 +203,7 @@ description: Инструкция по прошивке внешних ELRS пе
 ![CP210x Drivers](/assets/images/CP210xDriverDownload.png)
 </figure>
 
-В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](../../../../Manuals/FlashingOptions.md), нажмите `Build and Flash` и прошейте передатчик. Дождитесь окончания, при успешной прошивке будет надпись "Success"
+В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions.md), нажмите `Build and Flash` и прошейте передатчик. Дождитесь окончания, при успешной прошивке будет надпись "Success"
 
 
 <figure markdown>
