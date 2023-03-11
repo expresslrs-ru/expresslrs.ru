@@ -20,7 +20,7 @@ theme:
   - content.code.copy
   language: ru
   logo: assets/images/logotype.svg
-  favicon: /favicon.ico
+  favicon: assets/favicon.png
   
   palette:
   - media: "(prefers-color-scheme: dark)"
