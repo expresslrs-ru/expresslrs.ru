@@ -41,7 +41,7 @@ description: Инструкция по прошивке встроенных ELR
 ![Device Manager](/../assets/images/DeviceMngr.png)
 </figure>
 
-Если нет, и вы видите желтый восклицательный знак на логотипе рядом с названием устройства, то вам необходимо [установить драйвера (кликабельно)](https://www.st.com/en/development-tools/stsw-stm32102.html). Распакуйте архив, и запустите `VCP_V1.5.0_Setup_W7_x64_64bits`.
+Если нет, и вы видите желтый восклицательный знак на логотипе рядом с названием устройства, то вам необходимо [установить драйвера (кликабельно)](https://github.com/expresslrs-ru/expresslrs-ru.github.io/tree/main/docs/assets/files/STM32-USB-CDC.zip). Распакуйте архив, и запустите `VCP_V1.5.0_Setup_W7_x64_64bits`.
 
 В ExpressLRS конфигураторе выберите нужную вам версию и правильный тип устройства, а также метод прошивки `EdgeTXPassthrough`
 
