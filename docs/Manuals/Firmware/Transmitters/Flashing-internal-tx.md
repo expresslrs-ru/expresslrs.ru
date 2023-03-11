@@ -1,7 +1,7 @@
 ---
 description: Инструкция по прошивке встроенных ELRS передатчиков
 ---
-!!! danger "Внимание"
+!!! danger "Ошибка Bad Size Given"
     Если вы впервые обновляете свой **передатчик** через WiFi с 2.х/1.x прошивки, на 3.x прошивку, для начала вам нужно прошить его на версию 2.5.2, после этого прошить специальную [Repartitioner](https://github.com/ExpressLRS/repartitioner) прошивку [скачать тут](https://github.com/ExpressLRS/repartitioner/releases/download/1.0/repartitioner.bin) (нажать правой кнопкой, сохранить как). Оно будет ругаться на Target Mismatch (не совпадение таргетов), просто жмите `Flash Anyway`. 
     Только после этого можно закидывать 3.х прошивку по WiFi, точка поднимется сама, в Lua заходить не надо. 
     
@@ -13,20 +13,6 @@ description: Инструкция по прошивке встроенных ELR
 
 !!! danger "Jumper T-PRO"
     Чтобы прошить Jumper T-PRO по USB (через Edgetx) нужны определенные телодвижения, см. [Проблемы Jumper T-Pro (todo)](https://todo)
-
-- Targets:
-    - `RadioMaster_Zorro_2400_TX_via_ETX`
-    - `RadioMaster_TX16S_2400_TX_via_ETX`
-    - `RadioMaster_Boxer_2400_TX_via_ETX`
-
-- Device Category:
-    - `RadioMaster 2.4 GHz`
-
-- Device:
-    - `RadioMaster Zorro 2400 TX`
-    - `RadioMaster TX16S 2400 TX`
-    - `RadioMaster TX12 2400 TX`
-    - `RadioMaster Boxer 2400 TX`
 
 Перед прошивкой убедитесь что у вас последняя версия EdgeTX, [подробнее о прошивке EdgeTX читайте тут (todo)](todo)
 
