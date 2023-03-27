@@ -30,7 +30,7 @@ description: Инструкция по прошивке внешних ELRS пе
 
 ### Метод через браузер
 
-Выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
+Выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
 
 <figure markdown>
 ![Build]
@@ -84,7 +84,7 @@ description: Инструкция по прошивке внешних ELRS пе
 
 ### Метод через домашнюю сеть и браузер
 
-Выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions.md), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
+Выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions), cоберите кнопкой `Build` вашу прошивку через ExpressLRS Configurator.
 
 <figure markdown>
 ![Build]
@@ -203,7 +203,7 @@ description: Инструкция по прошивке внешних ELRS пе
 ![CP210x Drivers](/assets/images/CP210xDriverDownload.png)
 </figure>
 
-В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions.md), нажмите `Build and Flash` и прошейте передатчик. Дождитесь окончания, при успешной прошивке будет надпись "Success"
+В ExpressLRS Configurator выбрав правильный таргет и [Параметры сборки](/Manuals/FlashingOptions), нажмите `Build and Flash` и прошейте передатчик. Дождитесь окончания, при успешной прошивке будет надпись "Success"
 
 
 <figure markdown>
