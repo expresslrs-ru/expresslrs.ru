@@ -1,6 +1,5 @@
 ---
-template: main.html
-description: Get your Radio Handset prepared for ExpressLRS with this setup guide.
+description: Инструкция по первичной настройки аппаратуры под работу с ELRS
 ---
 
 ## Прошивка аппаратуры
@@ -102,7 +101,5 @@ ExpressLRS использует протокол **CRSF** для общенни�
 <figure markdown>
 ![mixesAux Color](/assets/images/txprep-clr-mixAux.jpg)
 </figure>
-
-Once you're done, press the RTN key to go back to the Mixes page. Do the same to the rest of the Channels you need.
 
 **Теперь ваша аппаратура настроена, и можно переходить к инструкциям по прошивке ELRS модулей**
