@@ -1,6 +1,5 @@
 ---
-template: main.html
-description: All-in-one Flight Controllers were released with ExpressLRS receivers using SPI connection.
+description: Инструкция по прошивке SPI приемников
 ---
 
 !!! note "Поддерживаемые пакетрейты"
