@@ -59,6 +59,7 @@ nav:
  - Инструкции: 
     - Настройка аппаратуры: Manuals/Firmware/Transmitters/tx-prep.md
     - Параметры сборки: Manuals/FlashingOptions.md
+    - Биндинг: Manuals/Binding.md
     - Прошивка:
       - Передатчики:
         - Внешние передатчики: Manuals/Firmware/Transmitters/Flashing-external-tx.md
