@@ -68,7 +68,7 @@ Betaflight 4.4.x работает только с ELRS 3.x.x передатчи�
 ```
 ```
 
-<script type="text/javascript" src="https://raw.githubusercontent.com/expresslrs-ru/expresslrs-ru.github.io/main/docs/assets/javascripts/crypto-js.js"></script>
+<script type="text/javascript" src="//unpkg.com/crypto-js@4.1.1/crypto-js.js"></script>
 <script type="text/javascript">
   window.addEventListener("load", (event) => {
     initBindingPhraseGen();
