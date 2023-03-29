@@ -37,6 +37,15 @@ theme:
     primary: teal
     accent: lime   
 markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.details
   - toc:
       permalink: true
@@ -53,6 +62,12 @@ extra_javascript:
 plugins:
  - social 
  - search
+extra:
+  social:
+    - icon: simple/telegram
+      link: https://t.me/expresslrs_rus
+      name: Telegram чатик
+copyright: "Copyright &copy; 2023 Lesha Rodin"
 #Добавлять новые пункты через тут, названия заданные тут видны на сайте, названия файлов - структура ссылки#
 nav:
  - Главная: index.md
