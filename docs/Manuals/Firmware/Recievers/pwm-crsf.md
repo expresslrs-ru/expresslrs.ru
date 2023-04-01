@@ -53,3 +53,5 @@ description: Использование PWM приёмника с полётни
 Далее заходим в Output Mapping и ставим всё, как на скриншоте.
 
 ![lua1](/../assets/images/crsf-pwm/image2.jpg){ width="300" } ![lua2](/../assets/images/crsf-pwm/image3.jpg){ width="300" }
+
+За инструкцию спасибо [@r_golod](https://t.me/r_golod)
