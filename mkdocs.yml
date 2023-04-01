@@ -85,6 +85,8 @@ nav:
     - Проблемы:
       - Оживление приемников: Manuals/Problems/Unbrick.md
       - Jumper T-Pro: Manuals/Problems/Jumper T-Pro.md
+    - DIY:
+      - EP1 DUAL передатчик: Manuals/DualRX_asTX.md
  - Железо: 
    - Приемники: hardware/receivers.md
    - Конвертеры: hardware/converters.md
