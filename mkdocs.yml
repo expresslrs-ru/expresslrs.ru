@@ -93,7 +93,7 @@ nav:
    - Конвертеры: hardware/converters.md
  - Инфо: Info/index.md
  - HdZero: 
-    - Инфо: HdZero/Index.md
+    - HdZero: HdZero/Index.md
     - Аналог мод: HdZero/analogmod.md
     - 3d печать: HdZero/3dprint.md
     - Аксессуары: HdZero/whattobuy.md
