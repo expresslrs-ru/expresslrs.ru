@@ -94,6 +94,11 @@ nav:
  - Инфо: Info/index.md
  - HdZero: 
     - HdZero: HdZero/Index.md
-    - Аналог мод: HdZero/analogmod.md
-    - 3d печать: HdZero/3dprint.md
-    - Аксессуары: HdZero/whattobuy.md
+    - Инструкции: 
+      - Прошивка: HdZero/firmware.md
+      - Настройка полетника: HdZero/fcsetup.md
+      - Стик команды: HdZero/stick.md
+      - Аналог мод: HdZero/analogmod.md
+    - Полезное:
+      - 3d печать: HdZero/3dprint.md
+      - Аксессуары: HdZero/whattobuy.md
