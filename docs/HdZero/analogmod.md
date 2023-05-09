@@ -2,6 +2,10 @@
 description: Управляем приемником, через очки
 ---
 
+!!! danger "Приемники SteadyView"
+    У приемника Steadyview нужно удалить 2й снизу пин, иначе работает только одна антенна, [видео](https://youtube.com/shorts/ZgIywegZMVw?feature=share)
+    <img src="/assets/images/hdzero/steadyremove.png" width="500">
+
 # Как управлять каналами приемника через меню очков
 
 Существует мод от [Pkendall64](https://github.com/pkendall64), который позволяет осуществлять управление аналоговым приемником через меню самих очков, полезно для приемников у которых нет внешних органов управления. [Оригинальная инструкция](https://github.com/pkendall64/hdzero-goggle/wiki/Analog-Module-Backpack-Control)
