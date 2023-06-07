@@ -37,6 +37,14 @@ theme:
     primary: teal
     accent: lime   
 markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

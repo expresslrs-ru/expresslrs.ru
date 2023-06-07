@@ -13,20 +13,28 @@ graph LR
 
 ## Проверяем версию прошивки передатчика:
 
-Потребуется [Lua скрипт ELRS](https://github.com/ExpressLRS/ExpressLRS/blob/3.x.x-maintenance/src/lua/elrsV3.lua?raw=true) (правой кнопкой, сохранить как *.lua). Скачайте и закиньте на флешку аппы, в папку `/Scripts/Tools`.
-Чтобы открыть скрипт на аппаратуре зажмите кпопку `SYS` и выберите `ExpressLRS`.
+=== "Через Lua Скрипт"
 
-<figure markdown>
-![Lua Script](/../assets/images/lua1.jpg)
-</figure>
+    Потребуется [Lua скрипт ELRS](https://github.com/ExpressLRS/ExpressLRS/blob/3.x.x-maintenance/src/lua/elrsV3.lua?raw=true) (правой кнопкой, сохранить как *.lua). Скачайте и закиньте на флешку аппы, в папку `/Scripts/Tools`.
+    Чтобы открыть скрипт на аппаратуре зажмите кпопку ++"SYS"++ и выберите `ExpressLRS`.
 
-Если скрипт не открывается и висит на `Loading...`, проверь что в модели выставлен Internal CRSF для внутреннего передатчика, либо External CRSF для внешнего. [Настройка аппаратуры](/Manuals/Firmware/Transmitters/tx-prep)
+    <figure markdown>
+    ![Lua Script](/../assets/images/lua1.jpg)
+    </figure>
 
-<figure markdown>
-![InternalRF BW](/../assets/images/txprep-bw-internalRF.jpg)
-</figure>
+    Если скрипт не открывается и висит на `Loading...`, проверь что в модели выставлен Internal CRSF для внутреннего передатчика, либо External CRSF для внешнего. [Настройка аппаратуры](/Manuals/Firmware/Transmitters/tx-prep)
 
-Листаем скрипт в самый низ и смотрим версию.
+    <figure markdown>
+    ![InternalRF BW](/../assets/images/txprep-bw-internalRF.jpg)
+    </figure>
+
+    Листаем скрипт в самый низ и смотрим версию.
+
+=== "На экране внешнего модуля"
+    Если у вашего внешнего передатчика есть экран, то версия прошивки показывается прямо там
+    <figure markdown>
+    ![Oled](/../assets/images/OLED-version_info.jpg)
+    </figure>
 
 ## Если ваш передатчик имеет версию 3.x.x 
 
