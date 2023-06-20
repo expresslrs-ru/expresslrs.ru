@@ -11,3 +11,4 @@ description: Какие аксессуары купить
 | <img src="https://ae04.alicdn.com/kf/S7f9f57832f154ccaaf04dcefb7bfc2dfG.jpg" width="300"> | Truerc антенны, продавец оффициальный диллер <br> [Aliexpress](https://aliexpress.ru/item/1005005082182995.html) |
 | <img src="https://ae04.alicdn.com/kf/He3ffb43008f74d4796182580a238059ck.jpg_640x640.jpg" width="300"> | Дешевые стабики, по непроверенной информации вполне неплохие [Aliexpress](https://aliexpress.ru/item/4000173975427.html)
 | <img src="/assets/images/hdzero/case2.jpg" width="300"> | Кейс для очков [Видео обзор](https://t.me/SharkByteFPVru/36224) [Aliexpress](https://aliexpress.ru/item/1005004496740857.html) 
+<img src="https://ir.ozone.ru/s3/multimedia-l/wc1000/6391989765.jpg" width="300"> | Батарейка для часов, устанавливается легко внутрь очков. Покупать 2pin на [Ozon](https://www.ozon.ru/product/batareyka-s-konnektorom-razemom-2pin-i-3m-skotchem-cmos-cr2032-dlya-biosa-bios-noutbukov-632576073/?sh=S0uDm6Csiw)
