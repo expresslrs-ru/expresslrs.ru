@@ -43,7 +43,7 @@ graph LR
 
 ## Если ваш передатчик имеет версию 3.x.x 
 
-Переходим в Lua Script ELRS, выбираем пункт `Wifi Connectivity` в скрипте, а потом нажмите `Enable Wifi`. Нажмите ОК еще раз, чтобы включить WiFI на передатчике. Подключитесь к сети `ExpressLRS TX` с паролем `expresslrs`.
+Переходим в Lua Script ELRS, выбираем пункт `Wifi Connectivity` в скрипте, а потом нажмите `Enable Wifi`. Нажмите ОК еще раз, чтобы включить WiFI на передатчике. Подключитесь к сети `ExpressLRS TX` с паролем `expresslrs` и перейдите на адрес 10.0.0.1 в браузере.
 
 <figure markdown>
 ![Lua3](/../assets/images/lua/wifi-bw.png)
@@ -83,7 +83,7 @@ graph LR
 ![LEDSEQ_WIFI_UPDATE](https://cdn.discordapp.com/attachments/738450139693449258/921065813983760384/LEDSEQ_WIFI_UPDATE_2_3.gif)
 </figure>
 
-Подключитесь к сети `ExpressLRS RX` с паролем `expresslrs`.
+Подключитесь к сети `ExpressLRS RX` с паролем `expresslrs` и перейдите на адрес 10.0.0.1 в браузере.
 
 <figure markdown>
 ![WiFi Hotspot](/../assets/images/WifiHotspot.png)
