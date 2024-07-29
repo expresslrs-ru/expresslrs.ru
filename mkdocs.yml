@@ -99,7 +99,9 @@ nav:
  - Железо: 
    - Приемники: hardware/receivers.md
    - Конвертеры: hardware/converters.md
- - Инфо: Info/index.md
+ - Инфо:
+   - Состояние сигнала: Info/index.md
+   - Lua скрипт: Info/lua_expl.md
  - HdZero: 
     - HdZero: HdZero/Index.md
     - Инструкции: 
