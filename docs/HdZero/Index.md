@@ -3,7 +3,7 @@ description: Страничка про очки HdZero
 ---
 
 
-[Telegram чатик](https://t.me/SharkByteFPVru){ .md-button .md-button--primary } [Купить в РФ](https://quadro.team/catalog/HD-Zero){ .md-button .md-button } 
+[Telegram чатик](https://t.me/SharkByteFPVru){ .md-button .md-button--primary } [Купить в РФ](https://xn--80adhqgqmpt.xn--p1ai/index.php?route=product/category&path=134_108){ .md-button .md-button } 
 
 <figure markdown>
 ![Googles](/assets/images/hdzero/googles.png)
