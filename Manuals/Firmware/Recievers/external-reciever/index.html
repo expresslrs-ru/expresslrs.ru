@@ -1,0 +1,1973 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Инструкция по прошивке внешних ELRS приемников">
+      
+      
+      
+        <link rel="canonical" href="https://expresslrs.ru/Manuals/Firmware/Recievers/external-reciever/">
+      
+      
+        <link rel="prev" href="../../Transmitters/Flashing-internal-tx/">
+      
+      
+        <link rel="next" href="../spi-reciever/">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Обычные приемники - ExpressLRS.RU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Обычные приемники - ExpressLRS.RU" >
+      
+        <meta  property="og:description"  content="Инструкция по прошивке внешних ELRS приемников" >
+      
+        <meta  property="og:image"  content="https://expresslrs.ru/assets/images/social/Manuals/Firmware/Recievers/external-reciever.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://expresslrs.ru/Manuals/Firmware/Recievers/external-reciever/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Обычные приемники - ExpressLRS.RU" >
+      
+        <meta  name="twitter:description"  content="Инструкция по прошивке внешних ELRS приемников" >
+      
+        <meta  name="twitter:image"  content="https://expresslrs.ru/assets/images/social/Manuals/Firmware/Recievers/external-reciever.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="ExpressLRS.RU" class="md-header__button md-logo" aria-label="ExpressLRS.RU" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logotype.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ExpressLRS.RU
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Обычные приемники
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ExpressLRS/ExpressLRS/releases/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ExpressLRS
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Transmitters/tx-prep/" class="md-tabs__link">
+          
+  
+  Инструкции
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../hardware/receivers/" class="md-tabs__link">
+          
+  
+  Железо
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Info/" class="md-tabs__link">
+          
+  
+  Инфо
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../HdZero/Index/" class="md-tabs__link">
+          
+  
+  HdZero
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="ExpressLRS.RU" class="md-nav__button md-logo" aria-label="ExpressLRS.RU" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logotype.svg" alt="logo">
+
+    </a>
+    ExpressLRS.RU
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ExpressLRS/ExpressLRS/releases/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ExpressLRS
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Главная
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Инструкции
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Инструкции
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transmitters/tx-prep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Настройка аппаратуры
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FlashingOptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Параметры сборки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Binding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Биндинг
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Прошивка
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Прошивка
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Передатчики
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Передатчики
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transmitters/Flashing-external-tx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Внешние передатчики
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transmitters/Flashing-internal-tx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Внутренние передатчики
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Приемники
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Приемники
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Обычные приемники
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Обычные приемники
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подключение приемника к полетнику
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Настройка полетного контроллера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Прошивка по Wifi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Прошивка по Wifi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Метод через браузер
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Метод через домашнюю сеть и браузер
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Метод через домашнюю сеть и конфигуратор
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Прошивка по USB через полетник
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-uartftdi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Прошивка через USB-UART/FTDI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spi-reciever/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPI приемники
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Проблемы
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Проблемы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Problems/Unbrick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Оживление приемников
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Problems/Jumper%20T-Pro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jumper T-Pro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Разное
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Разное
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DualRX_asTX/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EP1 DUAL передатчик
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pwm-crsf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PWM + CRSF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Железо
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Железо
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/receivers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Приемники
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../hardware/converters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Конвертеры
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Инфо
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Инфо
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Info/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Состояние сигнала
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Info/lua_expl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lua скрипт
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HdZero
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            HdZero
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HdZero/Index/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HdZero
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Инструкции
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Инструкции
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HdZero/firmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Прошивка
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HdZero/fcsetup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Настройка полетника
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HdZero/stick/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Стик команды
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HdZero/analogmod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Аналог мод
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HdZero/unlockfreestyle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Анлок 1W на фристайле
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Полезное
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Полезное
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HdZero/3dprint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3d печать
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../HdZero/whattobuy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Аксессуары
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подключение приемника к полетнику
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Настройка полетного контроллера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Прошивка по Wifi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Прошивка по Wifi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Метод через браузер
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Метод через домашнюю сеть и браузер
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Метод через домашнюю сеть и конфигуратор
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Прошивка по USB через полетник
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-uartftdi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Прошивка через USB-UART/FTDI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Обычные приемники</h1>
+
+<div class="admonition danger">
+<p class="admonition-title">Внимание</p>
+<p>Если вы переходите на <code>3.х.х</code> версию прошивки с <code>2.х.х</code> для начала обновите ваш приемник на версию <code>2.5.2</code>, иначе прошивка не установится по WiFi. Ошибка будет показывать сообщение <strong>"Not Enough Space"</strong>.</p>
+<p>Прошивка через полетник или USB-UART не требует предварительного обновления, можно сразу шить нужную версию.</p>
+<p>Не пытайтесь установить Repartitioner на приемник, это только для передатчиков.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Внимание</p>
+<p>При обратном переходе с <code>3.x.x</code> на <code>2.x.x</code> последние версии конфигуратора могут падать в ошибку, при прошивке по passthrough, попробуйте более старую версию конфигуратора, либо прошейте по WiFi.
+(Такой переход актуален в основном владельцам Literadio 2/3) 
+Перешить EP1 Dual на <code>2.x.x</code> невозможно</p>
+</div>
+<h2 id="_1">Подключение приемника к полетнику<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Примечание</p>
+<p>Порты на некоторых полетниках могут загнать приемник в режим бутлодера. Если после пайки ваш приемник не моргает, а просто светится перенесите его на UART1.</p>
+</div>
+<figure>
+<p><img alt="HM2400 connection" src="/../assets/images/EPWiring.png" /></p>
+</figure>
+<p>RX приемника паяем на TX полетника, TX приемника на RX полетника. Цифра TX/RX должна совпадать, если вы паяете на первый порт полетника, то это TX1 + RX1.</p>
+<div class="admonition note">
+<p class="admonition-title">DJI FPV</p>
+<p>Если у вас <strong>DJI Air Unit / Vista / O3</strong>, убедитесь что SBUS провод от видеопередатчика не попадает на тот же UART, что и ELRS приемник. Провод SBUS от юнита можно просто удалить, он вам не нужен, это для аппаратуры от DJI.</p>
+</div>
+<h2 id="_2">Настройка полетного контроллера<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>После пайки приемника настройте порты и протокол в полетнике. Если вы паялись на TX(x) RX(x), то выберите порт UART(x) во вкладке портов и поставить галочку Serial RX напротив него, <strong>НИКАКИЕ ДРУГИЕ ГАЛКИ И ОПЦИИ НА ЭТО ПОРТЕ НЕ ВКЛЮЧАЕМ</strong>. См. скриншоты ниже.</p>
+<details class="info">
+<summary>Скриншоты вкладки портов</summary>
+<p><figure markdown>
+<img alt="Ports Tab" src="/../assets/images/PortsTab.png" />
+</figure></p>
+<p><figure markdown>
+<img alt="INAV Ports" src="/../assets/images/FC-portsconfig-INAV.png" />
+</figure></p>
+</details>
+<p>Во вкладке приемника установите протокол <code>CRSF</code>. См. скриншоты ниже.</p>
+<details class="info">
+<summary>Скриншоты вкладки приемника</summary>
+<p><figure markdown>
+<img alt="Conf Tab" src="/../assets/images/ConfigurationTab.png" />
+</figure></p>
+<p><figure markdown>
+<img alt="INAV Config" src="/../assets/images/FC-config-INAV.png" />
+</figure></p>
+<p><figure markdown>
+<img alt="INAV Config" src="/../assets/images/FC-rxconfig-INAV.png" />
+</figure></p>
+</details>
+<h2 id="wifi">Прошивка по Wifi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Device Category: </p>
+<ul>
+<li>Выбираем фирму вашего приемника</li>
+</ul>
+</li>
+<li>
+<p>Device:</p>
+<ul>
+<li>Выбираем модель вашего приемника, например <code>HappyModel EP 2400 RX</code> для HappyModel EP1/2</li>
+</ul>
+</li>
+</ul>
+<figure>
+<p><img alt="via WiFi" src="/../assets/images/Method_RX_WiFi.png" /></p>
+<figcaption>Прошивка по WiFi</figcaption>
+</figure>
+<h3 id="_3">Метод через браузер<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><strong>(Самый простой и менее трудозатратный метод, рекомендуется всем)</strong></p>
+<p>Перед началом убедитесь что вы верно припаяли приемник и настроили полетник. <a href="#_1">(см начало статьи)</a></p>
+<p>Выбрав правильный таргет и <a href="/Manuals/FlashingOptions">Параметры сборки</a>, cоберите кнопкой <code>Build</code> вашу прошивку через ExpressLRS Configurator.</p>
+<figure>
+<p><img alt="Build" src="/../assets/images/Build.png" /></p>
+</figure>
+<p>После того как строчки в окне конфигуратора успешно пробегут, откроется проводник, где будет файл <code>Название_RX-&lt;версия&gt;.bin</code>.
+Не закрывайте это окно, а сохраните этот файл в удобное место для последующей загрузки, например скиньте в сохраненки Telegram.</p>
+<p>Подайте питание на полетник. Это можно сделать как по USB, так и воткнув батарею в дрон. Диод на приемнике начнет медленно мигать. Через 20-30 секунд диод на приемнике начнет моргать быстро, значит он начал раздавать WiFi.</p>
+<figure>
+<p><img alt="LEDSEQ_WIFI_UPDATE" src="https://cdn.discordapp.com/attachments/738450139693449258/921065813983760384/LEDSEQ_WIFI_UPDATE_2_3.gif" /></p>
+</figure>
+<p>Подключитесь к сети <code>ExpressLRS RX</code> с паролем <code>expresslrs</code>.</p>
+<figure>
+<p><img alt="WiFi Hotspot" src="/../assets/images/WifiHotspot.png" /></p>
+</figure>
+<p>Откройте браузер и перейдите на http://10.0.0.1/, откроется красивый сайт где вам нужна будет кнопка <code>Choose File</code>, выберите ранее полученный из конфигуратора файл <code>Название_RX-&lt;версия&gt;.bin.gz</code> и нажмите <code>Update</code>.
+Не надо разархивировать файл из <code>.gz</code> архива, кидайте прямо архивом.</p>
+<p>После того как файл загрузится появится зеленое окно подтверждения что все хорошо, либо ошибка. Если ругается на таргет, убедитесь что он верный и нажмите <code>Flash Anyway</code>.
+При успешной прошивке вы увидите зеленое окно подтверждения. Дождитесь пока приемник перезагрузится и снова начнет медленно мигать.
+После этого переподайте питание на полетный контроллер, приемник прошит.</p>
+<figure>
+<p><img alt="Firmware Update" src="/../assets/images/web-firmwareupdate.png" /></p>
+</figure>
+<figure>
+<p><img alt="Update Success" src="/../assets/images/web-firmwareupdateSuccess.png" /></p>
+</figure>
+<h3 id="_4">Метод через домашнюю сеть и браузер<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Этот метод работает только при условии, что вы задали свою домашнюю WiFi сеть при предыдущей прошивке, либо на WiFi странице приемника.</p>
+</div>
+<p>Выбрав правильный таргет и <a href="/Manuals/FlashingOptions">Параметры сборки</a>, cоберите кнопкой <code>Build</code> вашу прошивку через ExpressLRS Configurator.</p>
+<figure>
+<p><img alt="Build" src="/../assets/images/Build.png" /></p>
+</figure>
+<p>После того как строчки в окне конфигуратора успешно пробегут, откроется проводник, где будет файл <code>Название_RX-&lt;версия&gt;.bin</code>.
+Не закрывайте это окно, а сохраните этот файл в удобное место для последующей загрузки, например скиньте в сохраненки Telegram.</p>
+<p>Подайте питание на полетник. Это можно сделать как по USB, так и воткнув батарею в дрон. Диод на приемнике начнет медленно мигать. Через 20-30 секунд диод на приемнике начнет моргать быстро, значит он начал раздавать WiFi.</p>
+<figure>
+<p><img alt="LEDSEQ_WIFI_UPDATE" src="https://cdn.discordapp.com/attachments/738450139693449258/921065813983760384/LEDSEQ_WIFI_UPDATE_2_3.gif" /></p>
+</figure>
+<p>Если во время предыдущей прошивки вы прописали SSID своего домашнего WiFi или добавили его подключившись по <code>10.0.0.1</code>, то теперь модуль подключается к вашему роутеру, вместо раздачи точки.</p>
+<div class="admonition danger">
+<p class="admonition-title">Внимание</p>
+<p>После того как вы подключите свой TX/RX модуль к домашней WiFi сети он всегда будет подключаться к вашему роутеру. Он не будет создавать привычную WiFi точку, пока видит ваш домашний WiFi. Если вы не можете найти устройство в локальной сети, выключите роутер и подключитесь первым методом, далее уберите домашнюю WiFi сеть.</p>
+</div>
+<p>Используя браузер, перейдите по ссылке http://elrs_rx.local и вы попадете на WiFi страницу модуля. Найдите пункт Firmware Update, как показано ниже:</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Иногда роутеры не присваивают устройствам dns имя (http://elrs_rx.local), если этот сайт не доступен вам придется сходить в амдинку вашего роутера и посмотреть какой ip получило устройство ExpressLRS, и перейти по этому ip.</p>
+</div>
+<figure>
+<p><img alt="Firmware Update" src="/../assets/images/web-firmwareupdate.png" /></p>
+</figure>
+<p>Выберите ранее полученный из конфигуратора файл <code>Название_RX-&lt;версия&gt;.bin</code> и нажмите <code>Update</code>.</p>
+<p>После того как файл загрузится появится зеленое окно подтверждения что все хорошо, либо ошибка. Если ругается на таргет, убедитесь что он верный и нажмите <code>Flash Anyway</code>.
+При успешной прошивке вы увидите зеленое окно подтверждения. Дождитесь пока приемник перезагрузится и снова начнет медленно мигать.
+После этого переподайте питание на полетный контроллер, приемник прошит.</p>
+<figure>
+<p><img alt="Firmware Update" src="/../assets/images/web-firmwareupdate.png" /></p>
+</figure>
+<figure>
+<p><img alt="Update Success" src="/../assets/images/web-firmwareupdateSuccess.png" /></p>
+</figure>
+<h3 id="_5">Метод через домашнюю сеть и конфигуратор<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Этот метод работает только при условии, что вы задали свою домашнюю WiFi сеть при предыдущей прошивке, либо на WiFi странице приемника.</p>
+</div>
+<p>Подайте питание на полетник. Это можно сделать как по USB, так и воткнув батарею в дрон. Диод на приемнике начнет медленно мигать. Через 20-30 секунд диод на приемнике начнет моргать быстро, значит он начал раздавать WiFi.</p>
+<figure>
+<p><img alt="LEDSEQ_WIFI_UPDATE" src="https://cdn.discordapp.com/attachments/738450139693449258/921065813983760384/LEDSEQ_WIFI_UPDATE_2_3.gif" /></p>
+</figure>
+<p>Если во время предыдущей прошивки вы прописали SSID своего домашнего WiFi или добавили его подключившись по <code>10.0.0.1</code>, то теперь модуль подключается к вашему роутеру, вместо раздачи точки.</p>
+<div class="admonition danger">
+<p class="admonition-title">Внимание</p>
+<p>После того как вы подключите свой TX/RX модуль к домашней WiFi сети он всегда будет подключаться к вашему роутеру. Он не будет создавать привычную WiFi точку, пока видит ваш домашний WiFi. Если вы не можете найти устройство в локальной сети, выключите роутер и подключитесь первым методом, далее уберите домашнюю WiFi сеть.</p>
+</div>
+<p>Теперь ваше устройство будет видно внизу ExpressLRS Configurator, если выбран метод прошивки WiFi</p>
+<figure>
+<p><img alt="via WiFi" src="/assets/images/Method_TX_WiFi.png" /></p>
+<figcaption>Прошивка по WiFi</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Иногда роутеры не присваивают устройствам dns имя (http://elrs_rx.local), если этот сайт не доступен вам придется сходить в амдинку вашего роутера и посмотреть какой ip получило устройство ExpressLRS, и вбить его вместо порта внизу ExpressLRS Configurator.</p>
+</div>
+<p>В ExpressLRS Configurator выбрав правильный таргет и <a href="/Manuals/FlashingOptions">Параметры сборки</a>, нажмите <code>Build and Flash</code> и прошейте передатчик. При успешной прошивке вы увидите результат как на картинке ниже:</p>
+<figure>
+<p><img alt="Build &amp; Flash" src="/../assets/images/BuildFlash.png" /></p>
+</figure>
+<figure>
+<p><img alt="RXUpload Log" src="/../assets/images/RXWifiUpdateLog.png" /></p>
+</figure>
+<h2 id="usb">Прошивка по USB через полетник<a class="headerlink" href="#usb" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Device Category: </p>
+<ul>
+<li>Выбираем фирму вашего приемника</li>
+</ul>
+</li>
+<li>
+<p>Device:</p>
+<ul>
+<li>Выбираем модель вашего приемника, например <code>HappyModel EP 2400 RX</code> для HappyModel EP1/2</li>
+</ul>
+</li>
+</ul>
+<figure>
+<p><img alt="via Passthrough" src="/../assets/images/Method_RX_Passthrough.png" /></p>
+<figcaption>Прошивка через полетник</figcaption>
+</figure>
+<p>Убедитесь что приемник верно припаян, а в BetaFlight/iNav стоят правильные настройки <a href="#_1">(см начало статьи)</a>.</p>
+<p>Отключитесь от Betaflight/iNav конфигуратора и закройте его.</p>
+<p>Подключите полетный контроллер по USB, если приемник не горит подключите также аккумулятор. Выберите правильный COM-порт, тотже что используется в Betaflight/iNav для подключения к полетнику. Нажмите <strong>Build &amp; Flash</strong> и ждите успешного завершения прошивки.</p>
+<figure>
+<p><img alt="Build &amp; Flash" src="/../assets/images/BuildFlash.png" /></p>
+</figure>
+<div class="admonition info">
+<p class="admonition-title">Ошибка при прошивке</p>
+<p>Если во время прошивки вылезла ошибка, перевоткните USB в полетник и нажмите прошить еще раз. Если приемник успевает поднять WiFi до начала прошивки конфигаратором, то он не прошьется.</p>
+</div>
+<h2 id="usb-uartftdi">Прошивка через USB-UART/FTDI<a class="headerlink" href="#usb-uartftdi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Device Category: </p>
+<ul>
+<li>Выбираем фирму вашего приемника</li>
+</ul>
+</li>
+<li>
+<p>Device:</p>
+<ul>
+<li>Выбираем модель вашего приемника, например <code>HappyModel EP 2400 RX</code> для HappyModel EP1/2</li>
+</ul>
+</li>
+</ul>
+<figure>
+<p><img alt="via UART" src="/../assets/images/Method_RX_UART.png" /></p>
+<figcaption>Прошивка через FTDI</figcaption>
+</figure>
+<p>Подключите приемник к вашему USB-UART/FTDI адаптеру. TX-RX, RX-TX, 5V-5V, GND-GND. Запаяйте/замкните перемычку boot на приемнике, либо зажмите кнопку до подачи питания на приемник. Диод должен гореть ровно, не моргать.</p>
+<figure>
+<p><img alt="FTDI Wiring" src="/../assets/images/FTDIConn.png" /></p>
+</figure>
+<p>В ExpressLRS Configurator выбрав правильный таргет и <a href="/Manuals/FlashingOptions">Параметры сборки</a>, нажмите <code>Build and Flash</code> и прошейте передатчик.</p>
+<figure>
+<p><img alt="Build &amp; Flash" src="/../assets/images/BuildFlash.png" /></p>
+</figure>
+<p>После успешной прошивки, распайте перемычку boot и отключите  приемник от адаптера.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Lesha Rodin
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://t.me/expresslrs_rus" target="_blank" rel="noopener" title="Telegram чатик" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.5.5 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024q-.159.037-5.061 3.345-.72.495-1.302.48c-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789q.04-.324.893-.663 5.247-2.286 6.998-3.014c3.332-1.386 4.025-1.627 4.476-1.635"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant", "toc.follow", "navigation.path", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/binding-phrase.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/tablesort.js"></script>
+      
+        <script src="../../../../assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
